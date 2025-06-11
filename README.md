@@ -7,4 +7,5 @@ Project is open to being more advanced. For now, it will only contain the bare n
 
 ## Features:
 Lets player know if it an input was invalid and asks them to put a correct input
+
 View the console to see more information
