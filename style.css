@@ -23,14 +23,15 @@ body {
     justify-content: space-between;
     margin: 10% 200px 10%;
 }
-#rock, #paper, #scissor {
+.rock, .paper, .scissor {
     height: 100px;
     width: 100px;
     border-radius: 100%;
     border: 2px solid black;
     cursor: pointer;
+    background-color: rgb(241, 241, 241);
 }
-#go {
+.click.go {
     display: block;
     margin: auto;
     width: 200px;
