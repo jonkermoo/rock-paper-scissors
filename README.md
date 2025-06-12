@@ -1,11 +1,11 @@
 ## Johnny Zhu
 ## Project: Rock Paper Scissors
 
-Using HTML, CSS, and JavaScipt, create a basic rock, paper, scissor game that is ran entirely off the console
-
-Project is open to being more advanced. For now, it will only contain the bare necessities for a rock, paper, scissor game
+Basic rock paper scissors game made with HTML, CSS, and JavaScript
 
 ## Features:
-Lets player know if it an input was invalid and asks them to put a correct input
+UI with buttons to select choices, and a "Go" button to submit choice, that way the choice between "rock", "paper", or "scissor" can be changed.
 
-View the console to see more information
+Winning, losing, or tie-ing will result in a funny little gif and sound effect.
+
+View the console to see more information about what you chose and what the CPU chose.
