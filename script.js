@@ -115,15 +115,19 @@ go.addEventListener("click", () => {
 
 /* overlay upon end of game */
 const winScreen = document.getElementById("win-screen");
+const gif = document.getElementById("result-dance");
 
 function handleEndGame(outcome) {
     const resultText = document.querySelector("#result-text");
     if (outcome === "win") {
         resultText.textContent = "You Win!";
+        gif.src = "images/windance.gif";
     } else if (outcome === "lose") {
         resultText.textContent = "You Lose!";
+        gif.src = "images/lossdance.gif";
     } else {
         resultText.textContent = "You Tied!";
+        gif.src = "images/tiedance.gif";
     }
     winScreen.classList.remove("hidden");
 }
