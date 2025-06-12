@@ -1,38 +1,50 @@
 let humanChoice;
 let cpuChoice;
 
-/* humanChoice depends on what button clicked */
+/* humanChoice depends on what button clicked 
+   also make the choice selected highlighted */
 const rock = document.querySelector(".rock");
 const paper = document.querySelector(".paper");
 const scissor = document.querySelector(".scissor");
 
+rock.addEventListener("click", () => {
+    humanChoice = "ROCK";
+    rock.setAttribute("style", "border: 4px solid black;");
+    paper.setAttribute("style", "border: 2px solid black;");
+    scissor.setAttribute("style", "border: 2px solid black;");
+});
+paper.addEventListener("click", () => {
+    humanChoice = "PAPER";
+    paper.setAttribute("style", "border: 4px solid black;");
+    rock.setAttribute("style", "border: 2px solid black;");
+    scissor.setAttribute("style", "border: 2px solid black;");
+});
+scissor.addEventListener("click", () => {
+    humanChoice = "SCISSOR";
+    scissor.setAttribute("style", "border: 4px solid black;");
+    paper.setAttribute("style", "border: 2px solid black;");
+    rock.setAttribute("style", "border: 2px solid black;");
+});
+/* ========================================================= */
 
+/* making the button gray with mouse down */
 const click = document.querySelectorAll(".click");
-
 click.forEach(button => {
     button.addEventListener("mousedown", () => {
         button.style.backgroundColor = "gray";
     });
 });
-
 click.forEach(button => {
     button.addEventListener("mouseup", () => {
         button.style.backgroundColor = "rgb(241, 241, 241)";
     });
 });
-
 click.forEach(button => {
     button.addEventListener("drag", () => {
         button.style.backgroundColor = "rgb(241, 241, 241)";
     });
 });
-
-click.forEach(button => {
-    button.addEventListener("drop", () => {
-        button.style.backgroundColor = "rgb(241, 241, 241)";
-    });
-});
-
+/* ========================================================= */
 
 function getComputerChoice() {
     let choice = Math.floor(Math.random() * 3);
