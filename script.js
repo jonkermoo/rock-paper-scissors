@@ -1,5 +1,8 @@
 let humanChoice = "";
 let cpuChoice;
+const winSFX = new Audio("audio/yay.mp3");
+const loseSFX = new Audio("audio/trombone.mp3");
+const tieSFX = new Audio("audio/silly.mp3");
 
 /* humanChoice depends on what button clicked 
    also make the choice selected highlighted */
@@ -61,31 +64,38 @@ function playGame() {
     console.log("CPU chose " + cpuChoice);
 
     if (humanChoice == cpuChoice) {
-        handleEndGame("tie")
+        handleEndGame("tie");
+        tieSFX.play();
         humanChoice = "";
     } else {
         if (humanChoice == "ROCK") {
             if (cpuChoice == "PAPER") {
-                handleEndGame("lose")
+                handleEndGame("lose");
+                loseSFX.play();
                 humanChoice = "";
             } else {
-                handleEndGame("win")
+                handleEndGame("win");
+                winSFX.play();
                 humanChoice = "";
             }
         } else if (humanChoice == "PAPER") {
             if (cpuChoice == "SCISSOR") {
-                handleEndGame("lose")
+                handleEndGame("lose");
+                loseSFX.play();
                 humanChoice = "";
             } else {
-                handleEndGame("win")
+                handleEndGame("win");
+                winSFX.play();
                 humanChoice = "";
             }
         } else if (humanChoice == "SCISSOR") {
             if (cpuChoice == "ROCK") {
                 handleEndGame("lose")
+                loseSFX.play();
                 humanChoice = "";
             } else {
-                handleEndGame("win")
+                handleEndGame("win");
+                winSFX.play();
                 humanChoice = "";
             }
         }
@@ -119,6 +129,12 @@ function handleEndGame(outcome) {
 }
 
 document.getElementById("play-again").addEventListener("click", () => {
+    tieSFX.pause()
+    tieSFX.currentTime = 0;
+    winSFX.pause()
+    winSFX.currentTime = 0;
+    loseSFX.pause()
+    loseSFX.currentTime = 0;
     winScreen.classList.add("hidden");
 });
 /* ========================================================= */
