@@ -52,16 +52,9 @@ function getComputerChoice() {
     return choices[choice];
 }
 
-
-/* although not necessary, can be used for "go" button */
+/*  logic for choosing the winner
+    although not necessary, can be used for "go" button */
 function playGame() {
-    humanChoice = getHumanChoice().toUpperCase();
-    while (humanChoice != "ROCK" &&
-        humanChoice != "PAPER" &&
-        humanChoice != "SCISSOR") {
-        alert("Enter valid input");
-        humanChoice = getHumanChoice().toUpperCase();
-    }
     cpuChoice = getComputerChoice();
 
     console.log("You chose " + humanChoice);
@@ -91,6 +84,14 @@ function playGame() {
         }
     }
 }
+/* ========================================================= */
 
-
-playGame();
+/* go button to lock in selection */
+const go = document.querySelector(".go");
+go.addEventListener("click", () => {
+    playGame();
+    rock.setAttribute("style", "border: 2px solid black;");
+    paper.setAttribute("style", "border: 2px solid black;");
+    scissor.setAttribute("style", "border: 2px solid black;");
+})
+/* ========================================================= */
