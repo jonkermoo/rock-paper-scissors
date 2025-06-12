@@ -1,8 +1,11 @@
 let humanChoice = "";
 let cpuChoice;
 const winSFX = new Audio("audio/yay.mp3");
+winSFX.volume = 0.6
 const loseSFX = new Audio("audio/trombone.mp3");
+loseSFX.volume = 0.6
 const tieSFX = new Audio("audio/silly.mp3");
+tieSFX.volume = 0.6
 
 /* humanChoice depends on what button clicked 
    also make the choice selected highlighted */
