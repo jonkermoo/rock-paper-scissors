@@ -68,18 +68,22 @@ function playGame() {
                 alert("You lose");
             } else {
                 alert("You win");
+                handleWin()
             }
         } else if (humanChoice == "PAPER") {
             if (cpuChoice == "SCISSOR") {
                 alert("You lose");
             } else {
                 alert("You win");
+                handleWin()
+                
             }
         } else if (humanChoice == "SCISSOR") {
             if (cpuChoice == "ROCK") {
                 alert("You lose");
             } else {
-                    alert("You win");
+                alert("You win");
+                handleWin()
             }
         }
     }
@@ -95,3 +99,10 @@ go.addEventListener("click", () => {
     scissor.setAttribute("style", "border: 2px solid black;");
 })
 /* ========================================================= */
+
+/* overlay upon end of game */
+const winScreen = document.getElementById("win-screen");
+
+function handleWin() {
+    winScreen.classList.remove("hidden");
+}
