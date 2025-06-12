@@ -1,6 +1,3 @@
-document.body.style.backgroundColor = "darkGray";
-
-
 let humanChoice;
 let cpuChoice;
 
