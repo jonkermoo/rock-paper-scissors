@@ -106,3 +106,8 @@ const winScreen = document.getElementById("win-screen");
 function handleWin() {
     winScreen.classList.remove("hidden");
 }
+
+document.getElementById("play-again").addEventListener("click", () => {
+  winScreen.classList.add("hidden");
+});
+/* ========================================================= */
