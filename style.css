@@ -29,7 +29,7 @@ body {
     border-radius: 100%;
     border: 2px solid black;
     cursor: pointer;
-    background-color: rgb(241, 241, 241);
+    background-color: rgb(241, 241, 241); 
 }
 .click.go {
     display: block;
