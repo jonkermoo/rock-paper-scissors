@@ -7,19 +7,19 @@ const rock = document.querySelector(".rock");
 const paper = document.querySelector(".paper");
 const scissor = document.querySelector(".scissor");
 
-rock.addEventListener("click", () => {
+rock.addEventListener("mousedown", () => {
     humanChoice = "ROCK";
     rock.setAttribute("style", "border: 4px solid black;");
     paper.setAttribute("style", "border: 2px solid black;");
     scissor.setAttribute("style", "border: 2px solid black;");
 });
-paper.addEventListener("click", () => {
+paper.addEventListener("mousedown", () => {
     humanChoice = "PAPER";
     paper.setAttribute("style", "border: 4px solid black;");
     rock.setAttribute("style", "border: 2px solid black;");
     scissor.setAttribute("style", "border: 2px solid black;");
 });
-scissor.addEventListener("click", () => {
+scissor.addEventListener("mousedown", () => {
     humanChoice = "SCISSOR";
     scissor.setAttribute("style", "border: 4px solid black;");
     paper.setAttribute("style", "border: 2px solid black;");
@@ -51,12 +51,9 @@ function getComputerChoice() {
     const choices = ["ROCK", "PAPER", "SCISSOR"];
     return choices[choice];
 }
-/* this function is no longer necessary
-function getHumanChoice() {
-    let choice = prompt("Rock, paper, or scissor?");
-    return choice;
-} */
 
+
+/* although not necessary, can be used for "go" button */
 function playGame() {
     humanChoice = getHumanChoice().toUpperCase();
     while (humanChoice != "ROCK" &&
@@ -94,5 +91,6 @@ function playGame() {
         }
     }
 }
+
 
 playGame();
