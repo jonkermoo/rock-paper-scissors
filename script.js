@@ -15,19 +15,19 @@ const scissor = document.querySelector(".scissor");
 
 rock.addEventListener("mousedown", () => {
     humanChoice = "ROCK";
-    rock.setAttribute("style", "border: 4px solid black;");
+    rock.setAttribute("style", "border: 6px solid black;");
     paper.setAttribute("style", "border: 2px solid black;");
     scissor.setAttribute("style", "border: 2px solid black;");
 });
 paper.addEventListener("mousedown", () => {
     humanChoice = "PAPER";
-    paper.setAttribute("style", "border: 4px solid black;");
+    paper.setAttribute("style", "border: 6px solid black;");
     rock.setAttribute("style", "border: 2px solid black;");
     scissor.setAttribute("style", "border: 2px solid black;");
 });
 scissor.addEventListener("mousedown", () => {
     humanChoice = "SCISSOR";
-    scissor.setAttribute("style", "border: 4px solid black;");
+    scissor.setAttribute("style", "border: 6px solid black;");
     paper.setAttribute("style", "border: 2px solid black;");
     rock.setAttribute("style", "border: 2px solid black;");
 });
