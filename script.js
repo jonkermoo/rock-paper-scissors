@@ -1,4 +1,4 @@
-let humanChoice;
+let humanChoice = "";
 let cpuChoice;
 
 /* humanChoice depends on what button clicked 
@@ -60,30 +60,33 @@ function playGame() {
     console.log("You chose " + humanChoice);
     console.log("CPU chose " + cpuChoice);
 
-    if (humanChoice === cpuChoice) {
-        alert("Tie");
+    if (humanChoice == cpuChoice) {
+        handleEndGame("tie")
+        humanChoice = "";
     } else {
         if (humanChoice == "ROCK") {
             if (cpuChoice == "PAPER") {
-                alert("You lose");
+                handleEndGame("lose")
+                humanChoice = "";
             } else {
-                alert("You win");
-                handleWin()
+                handleEndGame("win")
+                humanChoice = "";
             }
         } else if (humanChoice == "PAPER") {
             if (cpuChoice == "SCISSOR") {
-                alert("You lose");
+                handleEndGame("lose")
+                humanChoice = "";
             } else {
-                alert("You win");
-                handleWin()
-                
+                handleEndGame("win")
+                humanChoice = "";
             }
         } else if (humanChoice == "SCISSOR") {
             if (cpuChoice == "ROCK") {
-                alert("You lose");
+                handleEndGame("lose")
+                humanChoice = "";
             } else {
-                alert("You win");
-                handleWin()
+                handleEndGame("win")
+                humanChoice = "";
             }
         }
     }
@@ -103,11 +106,19 @@ go.addEventListener("click", () => {
 /* overlay upon end of game */
 const winScreen = document.getElementById("win-screen");
 
-function handleWin() {
+function handleEndGame(outcome) {
+    const resultText = document.querySelector("#result-text");
+    if (outcome === "win") {
+        resultText.textContent = "You Win!";
+    } else if (outcome === "lose") {
+        resultText.textContent = "You Lose!";
+    } else {
+        resultText.textContent = "You Tied!";
+    }
     winScreen.classList.remove("hidden");
 }
 
 document.getElementById("play-again").addEventListener("click", () => {
-  winScreen.classList.add("hidden");
+    winScreen.classList.add("hidden");
 });
 /* ========================================================= */
